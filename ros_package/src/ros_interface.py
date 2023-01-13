@@ -5,7 +5,7 @@ import signal
 
 # ROS
 import rospy
-from std_msgs.msg import Header, Bool
+from std_msgs.msg import Header, Bool, String
 
 # Local
 from ros_package.srv import BlahBlah, BlahBlahResponse
@@ -39,7 +39,7 @@ class ROSInterface:
         self.kill_now = False
 
         # Register Publisher
-        self.valid_flag_pub = rospy.Publisher('/validity', Bool, queue_size=1, latch=True)
+        self.output_pub = rospy.Publisher('/output', String, queue_size=1, latch=True)
 
         # Register Subscriber
         self.subscription = rospy.Subscriber("/should_i_die", Bool, self.subsciption_callback)
@@ -68,7 +68,9 @@ class ROSInterface:
         with MyClass(self.arg1, self.arg2, self.arg3) as instance:
             while not rospy.is_shutdown() and not self.kill_now:
                 for item in instance:
-                    print(f"{item} | Servicable Value: {self.servicable_value}")
+                    string = f"{item} | Servicable Value: {self.servicable_value}"
+                    rospy.loginfo(string)
+                    self.output_pub.publish(string)
 
                     self.rate.sleep()
 
