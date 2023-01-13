@@ -1,0 +1,5 @@
+# input
+bool enable
+---
+# output
+bool success

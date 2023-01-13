@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find ros_package)/config/default.yaml" />
+    <node pkg="ros_package" name="ros_package_interface" type="ros_interface.py" output="screen"></node>
+</launch>
