@@ -8,8 +8,10 @@ import rospy
 from std_msgs.msg import Header, Bool, String
 
 # Local
-from ros_package.srv import BlahBlah, BlahBlahResponse
 from core_functionality import MyClass
+
+from ros_package.srv import BlahBlah, BlahBlahResponse
+from ros_package.msg import MyMessage
 
 
 class ROSInterface:
@@ -39,7 +41,7 @@ class ROSInterface:
         self.kill_now = False
 
         # Register Publisher
-        self.output_pub = rospy.Publisher('/output', String, queue_size=1, latch=True)
+        self.output_pub = rospy.Publisher('/output', MyMessage, queue_size=1, latch=True)
 
         # Register Subscriber
         self.subscription = rospy.Subscriber("/should_i_die", Bool, self.subsciption_callback)
@@ -69,8 +71,16 @@ class ROSInterface:
             while not rospy.is_shutdown() and not self.kill_now:
                 for item in instance:
                     string = f"{item} | Servicable Value: {self.servicable_value}"
+
+                    header = Header()
+                    header.stamp = rospy.Time.now()
+                    header.frame_id = 'some_reference_frame'
+                    message = MyMessage()
+                    message.header = header
+                    message.output = string
+                    self.output_pub.publish(message)
+
                     rospy.loginfo(string)
-                    self.output_pub.publish(string)
 
                     self.rate.sleep()
 
