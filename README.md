@@ -1,7 +1,11 @@
 # ros_package_template_python
-Repository template for a ROS package written in Python
+## Overview
+Repository template for a ROS package written in Python.
 
-## Structure
+### License
+TBC
+
+### Structure
 This template follows a "one package to one repository" architecture.
 Typically this is best employed after a time when interface layers between packages becomes well defined.
 In early stage development multiple packages maybe under development together and, in this case, it might be better to group multiple ROS packages in a single repository.
@@ -15,5 +19,30 @@ This is done for several reasons:
 - to allow for easy changes in middle-ware in the future
 - to allow more modular testing
 - to provide flexibilty in application of core functionality
+
+## Installation
+TBC
+
+## Usage
+TBC
+
+### Config Files
+TBC
+
+### Launch Files
+TBC
+
+### Nodes
+#### Node
+TBC
+
+##### Topics, Services and Actions Offerred
+TBC
+
+### ROSbags
+TBC
+
+
+## Bugs and Feature Requests
 
 TBC
