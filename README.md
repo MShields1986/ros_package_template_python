@@ -16,6 +16,8 @@ These include:
 ### License
 `TODO: Complete as appropriate for your package`
 
+This source code is released under the [MIT License](https://github.com/MShields1986/ros_package_template_python/blob/main/LICENSE).
+
 ### Structure
 This template follows a "one package to one repository" architecture.
 Typically this is best employed after a time when interface layers between packages becomes well defined.
