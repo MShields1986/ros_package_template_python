@@ -2,6 +2,17 @@
 ## Overview
 Repository template for a ROS package written in Python.
 
+This repository includes a simple ROS package with several key functionalities already boiler plated.
+These include:
+- A split between the ROS interface and the core underlying logic
+- Subsriber
+- Custom message publisher
+- Service Server
+- TODO: Add a Service Client Proxy
+- TODO: Add an Action Server
+- TODO: Add an Action Client Proxy
+- Launch File with Logging Options
+
 ### License
 TBC
 
@@ -42,7 +53,5 @@ TBC
 ### ROSbags
 TBC
 
-
 ## Bugs and Feature Requests
-
 TBC
