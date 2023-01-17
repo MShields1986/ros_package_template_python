@@ -14,7 +14,7 @@ These include:
 - Launch File with Logging Options
 
 ### License
-TBC
+`TODO: Complete as appropriate for your package`
 
 ### Structure
 This template follows a "one package to one repository" architecture.
@@ -32,26 +32,60 @@ This is done for several reasons:
 - to provide flexibilty in application of core functionality
 
 ## Installation
-TBC
+`TODO: Complete as appropriate for your package`
+
+Clone this repository into your catkin workspace src directory.
+```shell
+cd path_to_your/catkin_ws/src
+git clone https://github.com/MShields1986/ros_package_template_python.git
+```
+
+Build your project using catkin make.
+```shell
+cd path_to_your/catkin_ws/
+catkin_make
+```
 
 ## Usage
-TBC
+`TODO: Complete as appropriate for your package`
+
+Run the package using roslaunch.
+```shell
+roslaunch ros_package init.launch
+```
+
+Logging ROSbags to the ros_package/bags directory is enabled by default, but can be disabled using the log arguement. 
+```shell
+roslaunch ros_package init.launch log:=false
+```
 
 ### Config Files
-TBC
+`TODO: Complete as appropriate for your package`
 
-### Launch Files
-TBC
+Default configuration parameters are stored in ros_package/config/default.yaml
+
+Included parameters are as follows:
+
+Name          | Description                       | Default Value
+--------------|-----------------------------------|---------------------------
+example_param | An example parameter              | "I'm a parameter in a config file"
+
 
 ### Nodes
 #### Node
-TBC
+`TODO: Complete as appropriate for your package`
 
 ##### Topics, Services and Actions Offerred
-TBC
+`TODO: Complete as appropriate for your package`
 
 ### ROSbags
-TBC
+`TODO: Complete as appropriate for your package`
+Bags are logged into the ros_package/bags directory.
+Topics recorded are as follows:
+- /output
+- /should_i_die
 
 ## Bugs and Feature Requests
-TBC
+`TODO: Complete as appropriate for your package`
+
+Please report bugs and request features using the [Issue Tracker](https://github.com/MShields1986/ros_package_template_python/issues).
