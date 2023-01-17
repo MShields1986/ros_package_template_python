@@ -8,9 +8,9 @@ These include:
 - Subsriber
 - Custom message publisher
 - Service Server
-- TODO: Add a Service Client Proxy
-- TODO: Add an Action Server
-- TODO: Add an Action Client Proxy
+- `TODO: Add a Service Client Proxy`
+- `TODO: Add an Action Server`
+- `TODO: Add an Action Client Proxy`
 - Launch File with Logging Options
 
 ### License
