@@ -70,7 +70,7 @@ class ROSInterface:
         with MyClass(self.arg1, self.arg2, self.arg3) as instance:
             while not rospy.is_shutdown() and not self.kill_now:
                 for item in instance:
-                    string = f"{item} | Servicable Value: {self.servicable_value}"
+                    string = f"Item: {item.output} | param: {item.arg3}| Servicable Value: {self.servicable_value}"
 
                     header = Header()
                     header.stamp = rospy.Time.now()

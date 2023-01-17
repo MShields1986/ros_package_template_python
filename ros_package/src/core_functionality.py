@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+from dataclasses import dataclass
+from typing import Optional
+
+
+@dataclass
+class OutputClass:
+    time: Optional[float] = None
+    # Output
+    output: Optional[str] = None
+    arg3: Optional[str] = None
+
 
 class MyClass:
     """
@@ -19,6 +30,12 @@ class MyClass:
         private_val = 1
 
         self.connected = False
+
+    def populate_output(self, output):
+        data = OutputClass()
+        data.output = output
+        data.arg3 = self.arg3
+        return data
 
 
     def my_method(self, arg):
@@ -51,7 +68,7 @@ class MyClass:
 
 
     def __iter__(self):
-        item = f"An item | init arg3: {self.arg3}"
+        item = self.populate_output("An item")
         yield item
 
 
@@ -66,7 +83,7 @@ class MyClass:
 
 if __name__ == '__main__':
     try:
-        with MyClass("arg1", "arg2") as instance:
+        with MyClass("arg1", "arg2", "arg3") as instance:
             for item in instance:
                 print(item)
 
